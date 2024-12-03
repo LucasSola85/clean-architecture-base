@@ -1,5 +1,6 @@
 import { Router } from "express"
 import { AuthRoutes } from "./auth/routes";
+import { ProductRoutes } from "./products/routes";
 
 
 export class AppRoutes {
@@ -9,7 +10,8 @@ export class AppRoutes {
         const router = Router();
 
         //? Definicion del inicio del segmento referente a /api/auth
-        router.use('/api/auth', AuthRoutes.routes)
+        router.use('/api/auth', AuthRoutes.routes);
+        router.use('/api/product', ProductRoutes.routes ); 
 
         //! esto tambien aplican para otras rutas.
         // router.use('/api/billing', BillRoutes.routes)
